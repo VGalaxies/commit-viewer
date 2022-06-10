@@ -64,7 +64,7 @@ def fetch():
     g = github.Github(access_token)
     repo_list = [i for i in g.get_user().get_repos()]
 
-    for repo_index in track(range(len(repo_list))):
+    for repo_index in track(range(len(repo_list)), description="Fetching..."):
         repo = repo_list[repo_index]
 
         repo_name = str(repo).replace('Repository(full_name="', '').replace('")', '')
