@@ -1,4 +1,12 @@
-# Github REST API
+# Commit Viewer
+
+## Fetch
+
+`(date, repo_name, commit_msg)`
+
+sorted by date
+
+### Github REST API
 
 https://docs.github.com/cn/rest
 
@@ -14,7 +22,26 @@ if r.status_code == 200:
     print(repo_infos)
 ```
 
-# PyGithub
+cannot access to private repo information
+
+#### PyGithub
 
 https://github.com/PyGithub/PyGithub
 
+configuration stored in **json** file for safety
+
+```json
+{
+  "username": "xxx",
+  "access_token": "xxx"
+}
+```
+store data in **csv** file
+
+## Display
+
+https://github.com/Textualize/rich
+
+- progress
+- table
+- console

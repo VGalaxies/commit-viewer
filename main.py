@@ -10,7 +10,7 @@ from rich.console import Console
 from rich.progress import track
 from rich.table import Table
 
-csv_path = "data.csv"
+data_path = "data.csv"
 config_path = "config.json"
 
 
@@ -40,7 +40,7 @@ def parse_config(path):
 def read_csv(path):
     if os.path.exists(path) and os.path.getsize(path):
         res = []
-        with open(csv_path, "r") as f:
+        with open(data_path, "r") as f:
             for row in csv.reader(f, delimiter="|"):
                 res.append(row)
             return res
@@ -53,7 +53,7 @@ def write_csv(path, res):
 
 
 def fetch():
-    res = read_csv(csv_path)
+    res = read_csv(data_path)
     if res is not None:
         return res
 
@@ -86,7 +86,7 @@ def fetch():
             pass
 
     res.sort(key=lambda t: t[0])
-    write_csv(csv_path, res)
+    write_csv(data_path, res)
     return res
 
 
